@@ -1608,4 +1608,44 @@ const companyData = {
   ],
 };
 
-module.exports = companyData;
+function displayOnlyActiveEmployee() {
+  return companyData.employees.filter((emp) => emp.job.isActive);
+}
+
+// console.log(displayOnlyActiveEmployee());
+
+function fullEmployeeName() {
+  return companyData.employees.map(
+    (emp) => emp.personal.firstName +" " + emp.personal.lastName,
+  );
+}
+
+// console.log(fullEmployeeName())
+
+function totalSalry(){
+  let sum = 0;
+
+  for(let i=0; i<companyData.employees.length; i++){
+    sum+=companyData.employees[i].job.salary;
+  }
+
+  return sum;
+}
+
+// console.log("Total monthly salary paid by the company: "+totalSalry());
+
+function highestEarner(){
+  let highestPaidEmployee = companyData.employees[0].job.salary;
+
+  let result  = {};
+  
+  for(let i=0; i<companyData.employees.length; i++){
+    if(companyData.employees[i].job.salary > highestPaidEmployee ){
+      // result.highestEARNER =  companyData.employees[i];
+      highestPaidEmployee = companyData.employees[i].job.salary
+    }
+  }
+  return companyData.employees.filter((emp)=>emp.job.salary == highestPaidEmployee);
+}
+
+console.log(highestEarner())
