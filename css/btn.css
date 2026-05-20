@@ -1,0 +1,12 @@
+ /* btn.style.color = "white";
+    btn.style.backgroundColor = "blue";
+    btn.style.width = "100px";
+    btn.style.padding = "10px" */
+
+
+    .btn{
+        color:white;
+        background-color: blue;
+        width:100px;
+        padding: 10px;
+    }
